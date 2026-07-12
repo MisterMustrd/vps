@@ -17,23 +17,25 @@ Infrastructure documentation for my personal Ubuntu VPS, this includes networkin
 
 The VPS hosts several containerized services that provide networking, monitoring, secure remote access, and self-hosted applications.
 
-### Bare Metal
-- Pi-hole: Network-wide DNS
-- Unbound: Recursive DNS resolver 
-- Cloudflared: DNS-over-HTTPS fallback resolver.
-- Tailscale: Mesh VPN
+### Networking
+- Pi-hole – Network-wide DNS filtering.
+- Unbound – Local recursive DNS resolver.
+- Cloudflared – DNS-over-HTTPS fallback resolver.
+- Tailscale – Secure remote access to the VPS.
+- Gluetun – VPN gateway for selected Docker containers.
 
+### Monitoring
+- Netdata – Real-time monitoring of system resources and services.
+- Watchtower – Automatic Docker container updates.
 
-### Docker
-- Netdata: Monitoring of system performance, resource usage, and running services.
-- Watchtower: Automatic Docker container updates.
-- SMB Share: To provide access to shared files.
-- FileStash: Browser-based file management.
-- Gluetun: VPN gateway
+### File Management
+- SMB Share – Network file sharing.
+- FileStash – Browser-based file management.
 
-- Audiobookshelf: Self-hosted Podcast and Audio server
-- Invidious: Privacy-focused YouTube frontend.
-- Redlib: Privacy-focused Reddit frontend.
+### Media Services
+- Audiobookshelf – Self-hosted audiobook and podcast server.
+- Invidious – Privacy-focused YouTube frontend.
+- Redlib – Privacy-focused Reddit frontend.
 
 
 ## Network
