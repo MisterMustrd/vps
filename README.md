@@ -1,4 +1,4 @@
-# Overview
+# VPS
 The VPS hosts several services that provide networking, self-hosted applications and monitoring.
 
 ## Project Goals
