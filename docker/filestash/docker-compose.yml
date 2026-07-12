@@ -5,9 +5,9 @@ services:
     networks:
       - vpn_net
     volumes:
-    - ./config:/app/data/state
-    - /mnt/doucments/:/documents
-    - /mnt/storage/:/storage
+      - ./config:/app/data/state
+      - ${DOCUMENTS_PATH}:/documents
+      - ${STORAGE_PATH}:/storage
     ports:
       - "8334:8334"
     restart: unless-stopped

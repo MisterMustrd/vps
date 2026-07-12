@@ -2,23 +2,38 @@ services:
   gluetun:
     image: qmcgaw/gluetun
     container_name: gluetun
+
     cap_add:
       - NET_ADMIN
+
     devices:
       - /dev/net/tun:/dev/net/tun
+
     ports:
-      - [Tailscale IP: Isolated Container Port]
+      - "${TAILSCALE_IP}:PORT:PORT"
+      
+      # Audiobookshelf Container
+      - "${TAILSCALE_IP}:13378:80" 
+      
 
     volumes:
-      - /home/ubuntu/Documents/ovh/Docker/gluetun/VPS-WA.conf:/etc/wireguard/VPS-WA.conf
+      - ./config:/config
+
     environment:
-      - VPN_SERVICE_PROVIDER=provider
-      - VPN_TYPE=wireguard
-      - WIREGUARD_CONFIG_PATH=/etc/configpath/config.conf
-      - FIREWALL_OUTBOUND_SUBNETS=100.64.0.0/10
-      - TZ=America/Los_Angeles
+      VPN_SERVICE_PROVIDER: ${VPN_PROVIDER}
+      VPN_TYPE: ${VPN_TYPE}
+      WIREGUARD_PRIVATE_KEY: ${PRIVATE_KEY}
+      WIREGUARD_CONFIG_PATH: ${CONFIG_PATH}
+      FIREWALL_OUTBOUND_SUBNETS: ${SUBNETS}
+      TZ: ${TZ}
+
+    restart: unless-stopped
+
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - vpn_net
 
 networks:
   vpn_net:

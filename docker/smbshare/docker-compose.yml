@@ -4,11 +4,15 @@ services:
     container_name: smbshare
 
     environment:
-      - TZ=America/[Timezone]
+      TZ: ${TZ}
 
     volumes:
-      - /mnt/storage/downloads:/mount/downloads:rw
+      - ${PATH}:/path:rw
 
+    command: >
+      -u "${USERNAME};${PASSWORD}"
+      -s "Share;/path;yes;no;no;${USERNAME}"
+      -p
 
     ports:
       - "139:139"

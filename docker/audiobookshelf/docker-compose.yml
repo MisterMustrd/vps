@@ -2,22 +2,18 @@ services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
     container_name: audiobookshelf
-    ports:
-      - "13378:80"
+
+    network_mode: "container:gluetun"
+
     volumes:
-    - ./config:/config
-    - ./metadata:/metadata
-    - /mnt/storage/podcasts/:/pod
-    - /mnt/storage/audiobooks/:/audio
+      - ./config:/config
+      - ./metadata:/metadata
+      - ${STORAGE}:/storage
 
     environment:
-      - TZ=America/[Timezone]
+      TZ: ${TZ}
+
     restart: unless-stopped
+
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
-    networks:
-      - vpn_net
-
-networks:
-  vpn_net:
-    external: true

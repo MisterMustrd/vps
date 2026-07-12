@@ -2,14 +2,12 @@ services:
   postgres:
     image: postgres:14
     container_name: postgres
-    networks:
-      - vpn_net
     restart: unless-stopped
 
     environment:
-      POSTGRES_DB: [DB NAME]
-      POSTGRES_USER: [POSTGRES_USER]
-      POSTGRES_PASSWORD: [POSTGRES_PASSWORD]
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       TZ: ${TZ}
 
     volumes:
@@ -17,9 +15,11 @@ services:
       - ./config/sql:/config/sql:ro
       - ./docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh:ro
 
-
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - vpn_net
 
 volumes:
   postgresdata:

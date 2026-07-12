@@ -5,14 +5,14 @@ services:
     restart: unless-stopped
 
     ports:
-      - 3000:3000"
+      - "3000:3000"
 
     environment:
       INVIDIOUS_CONFIG: |
         db:
-          dbname: [Database Name]
-          user: [Database User]
-          password: [Database Pass]
+          dbname: ${POSTGRES_DB}
+          user: ${POSTGRES_USER}
+          password: ${POSTGRES_PASSWORD}
           host: invidious-db
           port: 5432
 
@@ -21,8 +21,8 @@ services:
         invidious_companion:
           - private_url: "http://companion:8282/companion"
 
-        invidious_companion_key: [Key]
-        hmac_key: [Key]
+        invidious_companion_key: ${INVIDIOUS_COMPANION_KEY}
+        hmac_key: ${HMAC_KEY}
 
         statistics_enabled: false
 

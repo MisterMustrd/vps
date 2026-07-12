@@ -103,5 +103,5 @@ When troubleshooting problems, I also use Docker container logs and Linux system
 - Reverse proxy and TLS automation on public facing container
 - Automated backup and recovery
 - Scripting / Automation in infrastructure
-- Expand monitoring to include homelab / future devices
-- Add AWS Node to my server network
+- Expand monitoring to include homelab 
+- Add AWS Node to server network
