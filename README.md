@@ -1,17 +1,20 @@
 # VPS
 The Virtual Private Server hosts several services that provide networking, self-hosted applications and monitoring.
 
+
 ## Project Goals
 - This was created to build hands-on experience with Linux system administration, networking, Docker, and self-hosting.
-- The VPS serves as the core of my personal infrastructure and provides secure access / shared services for my homelab.
+- The VPS serves as the core of my personal infrastructure and provides secure access and shared services for my homelab.
 - Learn Docker and Docker Compose by deploying and managing services.
 - Improve networking knowledge through DNS, VPN, and firewall configuration.
 - Practice securing a server using SSH, Tailscale, and firewall rules.
+
 
 ## Environment
 - Ubuntu Server 24.04 LTS
 - Docker & Docker Compose
 - Hosted on an Cloud Provider VPS
+
 
 ## Core Services
 
@@ -25,6 +28,7 @@ The Virtual Private Server hosts several services that provide networking, self-
 ### Monitoring
 - Netdata: Real-time monitoring of system resources and services.
 - Watchtower: Automatic Docker container updates.
+- ClamAV: Malware scanning for files and shared storage.
 
 ### Productivity
 - SMB Share: Network file sharing.
@@ -38,9 +42,10 @@ The Virtual Private Server hosts several services that provide networking, self-
 
 
 ## Network
-
 The VPS serves as the central networking hub for my self-hosted environment. 
+
 It provides private remote access, DNS resolution, and containerized services while minimizing public exposure.
+
 
 Key components:
 - Tailscale for secure connection to other devices on network  
@@ -50,6 +55,9 @@ Key components:
 - Docker for running and isolating services on dedicated networks.
 - Gluetun to isolate selected Docker containers through a VPN.
 - iptables firewall rules to restrict access to services and limit exposure to the public internet.
+- Larger storage is offloaded to my homelab
+- VPS is used as an exit node on the network so all device location remains private 
+
 
 
 ### DNS Flow
@@ -57,9 +65,7 @@ Client >> Pi-hole >> Unbound >> DNS Root Servers
                   >> (fallback) >> Cloudflared >> Cloudflare DNS
 
 
-
 ## Security
-
 To avoid exposing services directly to the internet, I use multiple layers of protection to limit access.
 
 Key Components:
@@ -70,34 +76,33 @@ Key Components:
 - Regular system and container updates to keep software current.
 
 
-
 ## Docker Infrastructure
-
 Apart from my Tailscale/DNS Chain, Docker is used to host and manage the services running on the VPS. 
 
 Each application runs in its own container with persistent storage to preserve data across updates and restarts.
 
 My Docker environment includes:
-
 - Docker Compose to define and manage multi-container applications.
 - User-defined Docker networks to isolate services and control communication.
 - Configuration files organized into separate directories for easier maintenance and deployment.
 - Sensitive compose configuration is separated into local .env files
 
 
-
 ## Storage
-
 The VPS uses local storage for the operating system, Docker volumes, and application data. 
+
 Docker volumes are used to ensure data is retained across container updates and restarts.
 
 Additional storage is provided through a network-mounted share from my homelab to keep major storage centralized.
 
 
-
 ## Monitoring
+The VPS is monitored to ensure applications and system resources remain healthy and available.
 
 The VPS is monitored using Netdata to track CPU, memory, disk, and network usage.
+
+ClamAV is used to scan files and shared storage for malware. 
+
 When troubleshooting problems, I also use Docker container logs and Linux system logs to identify issues.
 
 
