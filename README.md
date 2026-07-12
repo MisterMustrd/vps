@@ -67,7 +67,6 @@ Key Components:
 - iptables firewall rules including restricting access to devices connected to my private Tailscale network. 
 - Docker network isolation where appropriate.
 - Gluetun to route selected containers through a VPN.
-- Sensitive configuration is separated into local .env files
 - Regular system and container updates to keep software current.
 
 
@@ -83,6 +82,8 @@ My Docker environment includes:
 - Docker Compose to define and manage multi-container applications.
 - User-defined Docker networks to isolate services and control communication.
 - Configuration files organized into separate directories for easier maintenance and deployment.
+- Sensitive compose configuration is separated into local .env files
+
 
 
 ## Storage
