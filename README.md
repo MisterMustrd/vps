@@ -99,7 +99,7 @@ When troubleshooting problems, I also use Docker container logs and Linux system
 
 
 ## Future Goals
-- Reverse proxy and TLS automation on a container
+- Reverse proxy and TLS automation on public facing container
 - Automated backup and recovery
 - Scripting / Automation in infrastructure
 - Expand monitoring to include homelab / future devices
