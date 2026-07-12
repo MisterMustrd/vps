@@ -13,7 +13,8 @@ apt list --upgradable
 ## Prune Docker Images
 docker image prune -af
 
-
+## UFW Status
+sudo ufw status verbose
 
 ## Fail2Ban Status
 sudo systemctl status fail2ban
