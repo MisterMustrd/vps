@@ -1,5 +1,5 @@
 # VPS
-The VPS hosts several services that provide networking, self-hosted applications and monitoring.
+The Virtual Private Server hosts several services that provide networking, self-hosted applications and monitoring.
 
 ## Project Goals
 - This was created to build hands-on experience with Linux system administration, networking, Docker, and self-hosting.
