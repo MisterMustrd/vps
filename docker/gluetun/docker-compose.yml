@@ -7,7 +7,7 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     ports:
-      - ## Tailscale IP: Isolated Container Port
+      - [Tailscale IP: Isolated Container Port]
 
     volumes:
       - /home/ubuntu/Documents/ovh/Docker/gluetun/VPS-WA.conf:/etc/wireguard/VPS-WA.conf
