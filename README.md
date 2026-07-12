@@ -67,6 +67,7 @@ Key Components:
 - iptables firewall rules including restricting access to devices connected to my private Tailscale network. 
 - Docker network isolation where appropriate.
 - Gluetun to route selected containers through a VPN.
+- Sensitive configuration is separated into local .env files
 - Regular system and container updates to keep software current.
 
 
