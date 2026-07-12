@@ -10,21 +10,16 @@ sudo reboot
 ## Check Upgradable 
 apt list --upgradable
 
-## Verify/ Firewall Rules
-sudo systemctl is-enabled netfilter-persistent 
-
-## Reload Rules
-sudo netfilter-persistent reload
-
 ## Prune Docker Images
 docker image prune -af
 
-## Pihole 
-sudo pihole -up
-sudo pihole status
 
-### Gravity
-sudo pihole -g
+
+## Fail2Ban Status
+sudo systemctl status fail2ban
+
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
 
 ## Tailscale Status
 tailscale status
@@ -36,6 +31,13 @@ sudo systemctl status unbound
 sudo systemctl status cloudflared
 sudo systemctl start cloudflared
 sudo systemctl stop cloudflared
+
+## Pi-hole Status 
+sudo pihole status
+sudo pihole -up
+
+### Pi-Hole Gravity
+sudo pihole -g
 
 ## DNS Health Check
 dig @127.0.0.1 -p 5335 1.1.1.1

@@ -19,9 +19,11 @@ The Virtual Private Server hosts several services that provide networking, self-
 ## Core Services
 
 ### Networking
+- UFW: Netfilter firewall filter
+- Fail2Ban: Instrusion Prevention Software
 - Pi-hole: Network-wide DNS filtering.
 - Unbound: Local recursive DNS resolver.
-- Cloudflared: DNS-over-HTTPS fallback resolver.
+- dnscrypt-proxy: DNS-over-HTTPS fallback resolver.
 - Tailscale: Secure remote access to the VPS.
 - Gluetun: VPN gateway for selected Docker containers.
 
@@ -62,15 +64,16 @@ Key components:
 
 ### DNS Flow
 Client >> Pi-hole >> Unbound >> DNS Root Servers
-                  >> (fallback) >> Cloudflared >> Cloudflare DNS
+                  >> (fallback) >> dnscrypt-proxy >> Cloudflare DNS
 
 
 ## Security
 To avoid exposing services directly to the internet, I use multiple layers of protection to limit access.
 
 Key Components:
+- UFW: Default-deny firewall rules to limit access. 
+- Fail2ban: Automatically blocks IP addresses after repeated failed login attempts.
 - SSH key-based authentication for remote administration.
-- iptables firewall rules including restricting access to devices connected to my private Tailscale network. 
 - Docker network isolation where appropriate.
 - Gluetun to route selected containers through a VPN.
 - Regular system and container updates to keep software current.
