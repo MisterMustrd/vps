@@ -12,8 +12,11 @@ services:
     ports:
       - "${TAILSCALE_IP}:PORT:PORT"
       
-      # Audiobookshelf Container
+      # Audiobookshelf
       - "${TAILSCALE_IP}:13378:80" 
+
+      # RedLib
+      - "${TAILSCALE_IP}:8086:8080"
       
 
     volumes:

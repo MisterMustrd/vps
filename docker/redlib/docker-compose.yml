@@ -2,6 +2,9 @@ services:
   redlib:
     image: quay.io/redlib/redlib:latest
     container_name: redlib
+
+    network_mode: "container:gluetun"
+
     environment:
       - REDLIB_PORT=8080
       - REDLIB_ROBOTS_DISABLE_INDEXING=on
@@ -16,14 +19,7 @@ services:
       - REDLIB_DEFAULT_HIDE_AWARDS=on
       - REDLIB_DEFAULT_FIXED_NAVBAR=on
 
-    ports:
-      - 8086:8080
     restart: unless-stopped
+    
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
-    networks:
-      - vpn_net
-
-networks:
-  vpn_net:
-    external: true
