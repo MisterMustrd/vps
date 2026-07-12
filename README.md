@@ -16,19 +16,20 @@ The VPS hosts several services that provide networking, self-hosted applications
 ## Core Services
 
 ### Networking
-- Pi-hole – Network-wide DNS filtering.
-- Unbound – Local recursive DNS resolver.
-- Cloudflared – DNS-over-HTTPS fallback resolver.
-- Tailscale – Secure remote access to the VPS.
-- Gluetun – VPN gateway for selected Docker containers.
+- Pi-hole: Network-wide DNS filtering.
+- Unbound: Local recursive DNS resolver.
+- Cloudflared: DNS-over-HTTPS fallback resolver.
+- Tailscale: Secure remote access to the VPS.
+- Gluetun: VPN gateway for selected Docker containers.
 
 ### Monitoring
-- Netdata – Real-time monitoring of system resources and services.
-- Watchtower – Automatic Docker container updates.
+- Netdata: Real-time monitoring of system resources and services.
+- Watchtower: Automatic Docker container updates.
 
 ### Productivity
-- SMB Share – Network file sharing.
-- FileStash – Browser-based file management.
+- SMB Share: Network file sharing.
+- FileStash: Browser-based file management.
+- Postgres: SQL Database 
 
 ### Media Services
 - Audiobookshelf – Self-hosted audiobook and podcast server.
