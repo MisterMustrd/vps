@@ -28,7 +28,7 @@ The VPS hosts several containerized services that provide networking, monitoring
 - Netdata – Real-time monitoring of system resources and services.
 - Watchtower – Automatic Docker container updates.
 
-### File Management
+### Productivity
 - SMB Share – Network file sharing.
 - FileStash – Browser-based file management.
 
