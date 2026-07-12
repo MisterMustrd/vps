@@ -19,7 +19,7 @@ The Virtual Private Server hosts several services that provide networking, self-
 ## Core Services
 
 ### Networking
-- UFW: Netfilter firewall filter
+- UFW: Netfilter firewall
 - Fail2Ban: Instrusion Prevention Software
 - Pi-hole: Network-wide DNS filtering.
 - Unbound: Local recursive DNS resolver.
