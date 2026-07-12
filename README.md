@@ -31,6 +31,7 @@ The VPS hosts several containerized services that provide networking, monitoring
 - FileStash: Browser-based file management.
 - Gluetun: VPN gateway
 
+- Audiobookshelf: Self-hosted Podcast and Audio server
 - Invidious: Privacy-focused YouTube frontend.
 - Redlib: Privacy-focused Reddit frontend.
 
@@ -58,7 +59,7 @@ Client >> Pi-hole >> Unbound >> DNS Root Servers
 
 ## Security
 
-I avoid exposing services directly to the internet, so I use multiple layers of protection to reduce unnecessary access.
+To avoid exposing services directly to the internet, I use multiple layers of protection to limit access.
 
 Key Components:
 - SSH key-based authentication for remote administration.
@@ -71,7 +72,8 @@ Key Components:
 
 ## Docker Infrastructure
 
-Apart from my DNS Chain, Docker is used to host and manage the services running on the VPS. 
+Apart from my Tailscale/DNS Chain, Docker is used to host and manage the services running on the VPS. 
+
 Each application runs in its own container with persistent storage to preserve data across updates and restarts.
 
 My Docker environment includes:
@@ -87,4 +89,18 @@ The VPS uses local storage for the operating system, Docker volumes, and applica
 Docker volumes are used to ensure data is retained across container updates and restarts.
 
 Additional storage is provided through a network-mounted share from my homelab to keep major storage centralized.
+
+
+
+## Monitoring
+
+The VPS is monitored using Netdata to track CPU, memory, disk, and network usage.
+When troubleshooting problems, I also use Docker container logs and Linux system logs to identify issues.
+
+
+## Future Goals
+- Automated backup and recovery
+- Expand / Centralize monitoring for homelab and future devices
+- Add AWS Node to my server network
+- Reverse proxy and TLS automation on a container
 
