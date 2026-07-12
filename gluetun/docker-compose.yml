@@ -1,0 +1,25 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - ## Tailscale IP: Isolated Container Port
+
+    volumes:
+      - /home/ubuntu/Documents/ovh/Docker/gluetun/VPS-WA.conf:/etc/wireguard/VPS-WA.conf
+    environment:
+      - VPN_SERVICE_PROVIDER=provider
+      - VPN_TYPE=wireguard
+      - WIREGUARD_CONFIG_PATH=/etc/configpath/config.conf
+      - FIREWALL_OUTBOUND_SUBNETS=100.64.0.0/10
+      - TZ=America/Los_Angeles
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  vpn_net:
+    external: true

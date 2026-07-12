@@ -1,0 +1,31 @@
+services:
+  smbshare:
+    image: dperson/samba:latest
+    container_name: smbshare
+
+    environment:
+      - TZ=America/Los_Angeles
+
+    volumes:
+      - /mnt/storage/downloads:/mount/downloads:rw
+
+    command: >
+      -u "[username:password]"
+      -s "Downloads;/mount/downloads;yes;no;no;[username]"
+      -p
+
+    ports:
+      - "139:139"
+      - "445:445"
+
+    restart: unless-stopped
+
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - vpn_net
+
+networks:
+  vpn_net:
+    external: true
