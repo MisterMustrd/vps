@@ -101,6 +101,6 @@ When troubleshooting problems, I also use Docker container logs and Linux system
 ## Future Goals
 - Reverse proxy and TLS automation on a container
 - Automated backup and recovery
-- Scripting / Automation 
+- Scripting / Automation in infrastructure
 - Expand monitoring to include homelab / future devices
 - Add AWS Node to my server network
