@@ -1,7 +1,8 @@
-# vps
+# Overview
+The VPS hosts several services that provide networking, self-hosted applications and monitoring.
 
 ## Project Goals
-- This was created to build hands-on experience with Linux system administration, networking, Docker, and self-hosting. 
+- This was created to build hands-on experience with Linux system administration, networking, Docker, and self-hosting.
 - The VPS serves as the core of my personal infrastructure and provides secure access / shared services for my homelab.
 - Learn Docker and Docker Compose by deploying and managing services.
 - Improve networking knowledge through DNS, VPN, and firewall configuration.
@@ -13,8 +14,6 @@
 - Hosted on an Cloud Provider VPS
 
 ## Core Services
-
-The VPS hosts several containerized services that provide networking, monitoring, secure remote access, and self-hosted applications.
 
 ### Networking
 - Pi-hole – Network-wide DNS filtering.
