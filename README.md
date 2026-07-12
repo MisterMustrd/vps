@@ -72,8 +72,8 @@ To avoid exposing services directly to the internet, I use multiple layers of pr
 
 Key Components:
 - UFW: Default-deny firewall rules to limit access. 
-- Fail2ban: Automatically blocks IP addresses after repeated failed login attempts.
 - SSH key-based authentication for remote administration.
+- Fail2ban: Automatically blocks IP addresses after repeated failed login attempts.
 - Docker network isolation where appropriate.
 - Gluetun to route selected containers through a VPN.
 - Regular system and container updates to keep software current.
