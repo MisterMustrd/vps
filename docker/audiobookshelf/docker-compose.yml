@@ -11,7 +11,7 @@ services:
     - /mnt/storage/audiobooks/:/audio
 
     environment:
-      - TZ=America/Los_Angeles
+      - TZ=America/[Timezone]
     restart: unless-stopped
     labels:
       - "com.centurylinklabs.watchtower.enable=true"

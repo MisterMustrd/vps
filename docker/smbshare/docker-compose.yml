@@ -4,7 +4,7 @@ services:
     container_name: smbshare
 
     environment:
-      - TZ=America/Los_Angeles
+      - TZ=America/[Timezone]
 
     volumes:
       - /mnt/storage/downloads:/mount/downloads:rw
