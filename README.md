@@ -23,7 +23,7 @@ The Virtual Private Server hosts several services that provide networking, self-
 - Fail2Ban: Instrusion Prevention Software
 - Pi-hole: Network-wide DNS filtering.
 - Unbound: Local recursive DNS resolver.
-- dnscrypt-proxy: DNS-over-HTTPS fallback resolver.
+- dnscrypt-proxy: Upstream DNS resolver / fallback for Pi-hole.
 - Tailscale: Secure remote access to the VPS.
 - Gluetun: VPN gateway for selected Docker containers.
 
@@ -34,7 +34,7 @@ The Virtual Private Server hosts several services that provide networking, self-
 
 ### Productivity
 - SMB Share: Network file sharing.
-- FileStash: Browser-based file management.
+- FileStash: Browser-based file management
 - Postgres: SQL Database 
 
 ### Media Services
@@ -53,7 +53,6 @@ Key components:
 - Tailscale for secure connection to other devices on network  
 - Pi-hole for network DNS filtering and ad blocking.
 - Unbound as a local DNS resolver for improved privacy and reliability.
-- Cloudflared as a fallback DNS.
 - Docker for running and isolating services on dedicated networks.
 - Gluetun to isolate selected Docker containers through a VPN.
 - iptables firewall rules to restrict access to services and limit exposure to the public internet.
