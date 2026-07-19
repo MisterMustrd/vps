@@ -89,6 +89,9 @@ My Docker environment includes:
 - User-defined Docker networks to isolate services and control communication.
 - Configuration files organized into separate directories for easier maintenance and deployment.
 - Sensitive compose configuration is separated into local .env files
+- Composes optomized to be portable for repeatable deployments.
+- Git-based infrastructure management with repositories deployed over SSH.
+
 
 
 ## Storage

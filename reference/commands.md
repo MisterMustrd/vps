@@ -28,10 +28,10 @@ tailscale status
 ## Unbound Status
 sudo systemctl status unbound
 
-## Cloudflared
-sudo systemctl status cloudflared
-sudo systemctl start cloudflared
-sudo systemctl stop cloudflared
+## dnscrypt Status
+sudo systemctl status dnscrypt-proxy
+
+
 
 ## Pi-hole Status 
 sudo pihole status
